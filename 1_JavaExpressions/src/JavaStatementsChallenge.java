@@ -1,22 +1,21 @@
 public class JavaStatementsChallenge {
+
     public static void main(String[] args) {
-        boolean gameOver = true;
-        int score = 800;
-        int levelCompleted = 5;
-        int bonus = 100;
+        System.out.println(
+            "The first highScore is: "+ calculateScore(true, 800, 8, 200)
+        );
+        System.out.println(
+            "The second highScore is: " + calculateScore(true, 10_000, 8, 200)
+        );
+    }
+
+    public static int calculateScore(
+        boolean gameOver, int score, int levelCompleted, int bonus
+    ){
         int finalScore = score;
         if (gameOver){
             finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score for the setup was: " + finalScore);
         }
-
-        // The challenge.
-        score = 10_000;
-        levelCompleted = 8;
-        bonus = 200;
-        if (gameOver){
-            finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score for the challenge was: " + finalScore);
-        }
+        return finalScore;
     }
 }
