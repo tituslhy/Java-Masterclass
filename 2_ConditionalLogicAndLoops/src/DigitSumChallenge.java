@@ -5,7 +5,12 @@ public class DigitSumChallenge {
         System.out.println(sumDigits(1));
     }
     public static int sumDigitsAlt(int num){
-        //The instructor's solution
+        /**
+         * The instructor's solution
+         * The thinking is to use the '%' operator to keep taking the last
+         * digit of the number out. Then add this to the running sum using
+         * a while loop.
+         */
         if (num<0){
             return -1;
         }
@@ -19,7 +24,11 @@ public class DigitSumChallenge {
     }
 
     public static int sumDigits(int num){
-        // My solution
+        /**
+         * My solution:
+         * The thinking is to convert the digit to a string and then parse it
+         * out character by character using a for loop
+         */
         if (num<0){
             return -1;
         }
