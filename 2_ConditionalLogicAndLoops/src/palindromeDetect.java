@@ -1,19 +1,23 @@
 public class palindromeDetect {
+    // These are the functions for Chapter 6: Mastering Conditional Logic,
+    // Loops, And Interactive Java Application
     public static void main(String[] args) {
-//        System.out.println(isPalindrome(-1221));
-//        System.out.println(sumFirstAndLastDigit(252));
-//        System.out.println(getEvenDigitSum(123456789));
-//        System.out.println(hasSharedDigit(-100, 500));
-//        System.out.println(hasSharedDigit(-1, 10));
-//        System.out.println(hasSameLastDigit(41,22,71));
-//        System.out.println(getGreatestCommonDivisor(25, 15));
-//        System.out.println(isPerfectNumber(28));
-//        System.out.println(getDigitCount(789));
-//        System.out.println(canPack(1,0,4));
-//        System.out.println(getLargestPrime(12));
+        System.out.println(isPalindrome(-1221));
+        System.out.println(sumFirstAndLastDigit(252));
+        System.out.println(getEvenDigitSum(123456789));
+        System.out.println(hasSharedDigit(-100, 500));
+        System.out.println(hasSharedDigit(-1, 10));
+        System.out.println(hasSameLastDigit(41,22,71));
+        System.out.println(getGreatestCommonDivisor(25, 15));
+        System.out.println(isPerfectNumber(28));
+        System.out.println(getDigitCount(789));
+        System.out.println(canPack(1,0,4));
         System.out.println(getLargestPrime(12));
-//        printFactors(6);
-//        numberToWords(-121);
+        System.out.println(getLargestPrime(12));
+        printFactors(6);
+        numberToWords(-121);
+        printSquareStar(5);
+        printSquareStar(8);
     }
     public static boolean isPalindrome(int number){
         if (number<0){
@@ -215,7 +219,31 @@ public class palindromeDetect {
                 number /= i;
             }
         }
-
         return largestPrime;
+    }
+
+    public static void printSquareStar(int num){
+        if (num < 5){
+            System.out.println("Invalid Value");
+        }
+        else {
+            for (int row = 1; row <= num; row++){
+                System.out.println();
+                if ((row == 1) || (row ==  num)){
+                    System.out.print("*".repeat(num));
+                    continue;
+                }
+                for (int column = 1; column <= num; column ++){
+                    if (
+                        (column == 1) || (column == num) || (row == column) || (column == (num - row + 1))
+                    ){
+                        System.out.print("*");
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+
+            }
+        }
     }
 }
