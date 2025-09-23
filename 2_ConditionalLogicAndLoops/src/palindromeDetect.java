@@ -235,7 +235,15 @@ public class palindromeDetect {
                 }
                 for (int column = 1; column <= num; column ++){
                     if (
-                        (column == 1) || (column == num) || (row == column) || (column == (num - row + 1))
+                        (
+                            column == 1
+                        ) || (
+                            column == num
+                        ) || (
+                            row == column
+                        ) || (
+                            column == (num - row + 1)
+                        )
                     ){
                         System.out.print("*");
                     } else {
