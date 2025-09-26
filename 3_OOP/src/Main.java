@@ -1,16 +1,42 @@
 public class Main {
     public static void main(String[] args) {
-        ComplexNumber one = new ComplexNumber(1.0, 1.0);
-        ComplexNumber number = new ComplexNumber(2.5, -1.5);
-        one.add(1,1);
-        System.out.println("one.real= " + one.getReal());
-        System.out.println("one.imaginary= " + one.getImaginary());
-        one.subtract(number);
-        System.out.println("one.real= " + one.getReal());
-        System.out.println("one.imaginary= " + one.getImaginary());
-        number.subtract(one);
-        System.out.println("number.real= " + number.getReal());
-        System.out.println("number.imaginary= " + number.getImaginary());
+        SalariedEmployee titus = new SalariedEmployee(
+            "11/11/1985",
+            "00/00/0000",
+            "Titus",
+            "01/01/2025",
+            81_521.29,
+            false
+        );
+        System.out.println(titus);
+        System.out.println("Age = " + titus.getAge());
+        System.out.println(titus.CollectPay());
+
+        HourlyEmployee joe = new HourlyEmployee(
+            "11/11/1984",
+            "00/00/0000",
+            "Joe",
+            "01/01/2024",
+            50.95
+        );
+        System.out.println(joe);
+        System.out.println("Age = " + joe.getAge());
+        System.out.println(joe.CollectPay());
+        System.out.println(joe.getDoublePay());
+
+
+
+//        ComplexNumber one = new ComplexNumber(1.0, 1.0);
+//        ComplexNumber number = new ComplexNumber(2.5, -1.5);
+//        one.add(1,1);
+//        System.out.println("one.real= " + one.getReal());
+//        System.out.println("one.imaginary= " + one.getImaginary());
+//        one.subtract(number);
+//        System.out.println("one.real= " + one.getReal());
+//        System.out.println("one.imaginary= " + one.getImaginary());
+//        number.subtract(one);
+//        System.out.println("number.real= " + number.getReal());
+//        System.out.println("number.imaginary= " + number.getImaginary());
 
 //        Wall wall = new Wall(5,4);
 //
