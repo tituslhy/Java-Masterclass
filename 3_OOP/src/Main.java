@@ -24,8 +24,6 @@ public class Main {
         System.out.println(joe.CollectPay());
         System.out.println(joe.getDoublePay());
 
-
-
 //        ComplexNumber one = new ComplexNumber(1.0, 1.0);
 //        ComplexNumber number = new ComplexNumber(2.5, -1.5);
 //        one.add(1,1);
