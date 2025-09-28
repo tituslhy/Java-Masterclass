@@ -4,11 +4,11 @@ public class Main {
         Monitor theMonitor = new Monitor("27inch Beast", "Acer", 27,"2540 x 1440");
         Motherboard theMotherboard = new Motherboard("BJ-200", "Asus", 4, 6, "v2.44");
         PersonalComputer theComputer = new PersonalComputer("2208", "Dell", theMonitor, theMotherboard, theCase);
-
         theComputer.powerUp();
-        // This is one way to use a method from a composite class
-//        theComputer.getMonitor().drawPixelAt(10, 10, "red");
-//        theComputer.getMotherboard().loadProgram("Windows OS");
+
+        SmartKitchen kitchen = new SmartKitchen();
+        kitchen.setKitchenState(true, false, true);
+        kitchen.doKitchenWork();
 
     }
 }
