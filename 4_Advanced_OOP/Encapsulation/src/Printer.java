@@ -10,18 +10,29 @@ public class Printer {
     }
 
     public int addToner(int tonerAmount){
-        int tempValue = tonerLevel += tonerAmount;
-        if (tempValue > 100){
-            return -1;
+        if ((tonerAmount >0) && (tonerAmount<=100)){
+            if ((tonerLevel + tonerAmount) > 100){
+                return -1;
+            } else {
+                tonerLevel += tonerAmount;
+                return tonerLevel;
+            }
         }
-        tonerLevel += tonerAmount;
-        return tonerLevel;
+        return -1;
     }
 
     public int printPages(int pages){
-        int jobPages = (duplex) ? (pages / 2) + (pages % 2) : pages;
-        pagesPrinted += jobPages;
-        return pagesPrinted;
+        int pagesToPrint = pages;
+        if (duplex){
+            if (pages % 2 == 0){
+                pagesToPrint = pages /2;
+            } else {
+                pagesToPrint = pages /2 + 1;
+
+            }
+        }
+        System.out.println("Evaluated job for " + pages + " duplex mode: " + duplex + " | pagesPrinted: " + pagesPrinted);
+        return pagesToPrint;
     }
 
     public int getPagesPrinted() {

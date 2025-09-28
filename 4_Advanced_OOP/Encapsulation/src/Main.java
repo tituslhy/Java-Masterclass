@@ -13,5 +13,8 @@ public class Main {
         System.out.println("Remaining health = " + player.healthRemaining());
 
         EnhancedPlayer titus = new EnhancedPlayer("Titus");
+
+        int var = 11;
+        System.out.println(var/2);
     }
 }
