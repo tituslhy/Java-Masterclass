@@ -9,6 +9,17 @@ public class Movie {
         String instanceType = this.getClass().getSimpleName();
         System.out.println(title + " is a " + instanceType + " film");
     }
+
+    // Equivalent to Python's class method. creates a new class.
+    // This is known as a factory method - obtaining the method without knowing the object
+    public static Movie getMovie(String type, String title){
+        return switch(type.toUpperCase().charAt(0)){
+            case 'A' -> new Adventure(title);
+            case 'C' -> new Comedy(title);
+            case 'S' -> new ScienceFiction(title);
+            default -> new Movie(title);
+        };
+    }
 }
 
 class Adventure extends Movie {
