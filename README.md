@@ -1,5 +1,6 @@
 # Java-Masterclass
-Java Masterclass
+
+Titus is now a Java Master!
 
 <p align="center">
     <img src="./images/JavaMasterclass.png">
