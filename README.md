@@ -1,6 +1,6 @@
 # Java-Masterclass
 
-Titus is now a Java Master!
+Titus is now a Java Master in training!
 
 <p align="center">
     <img src="./images/JavaMasterclass.png">
