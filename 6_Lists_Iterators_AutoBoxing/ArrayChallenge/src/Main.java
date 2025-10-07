@@ -28,6 +28,8 @@ public class Main {
                 String groceries = scanner.nextLine();
                 String[] parts = groceries.split(",");
                 for(String part : parts){
+                    part = part.trim();
+                    if (part.isEmpty()) continue; //catch edge case
                     if (groceryList.contains(part)){
                         System.out.println("Skipping " + part + " because it is already in the grocery list");
                         continue;
@@ -39,7 +41,7 @@ public class Main {
                     System.out.println("No element left in the grocery list to remove");
                     continue;
                 }
-                System.out.println("Add items (separated by commas) to grocery list: ");
+                System.out.println("Enter items (separated by commas) to remove from grocery list: ");
                 String groceries = scanner.nextLine();
                 String[] parts = groceries.split(",");
                 for(String part : parts){
