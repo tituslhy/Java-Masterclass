@@ -2,6 +2,7 @@ package dev.JavaMasterclass;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /*
@@ -60,5 +61,47 @@ public class Main {
         //Add lists
         groceries.addAll(nextList);
         System.out.println(groceries);
+
+        //Retrieve from an array list
+        System.out.println("Third item = " + groceries.get(2));
+
+        //Check if a list contains something
+        if (groceries.contains("mustard")){
+            System.out.println("List contains mustard");
+        }
+
+        //Print index of an element
+        System.out.println("first = " + groceries.indexOf("yoghurt"));
+        System.out.println("last = " + groceries.lastIndexOf("yoghurt"));
+
+        //Selective element removal
+        groceries.remove(1);
+        System.out.println(groceries);
+        groceries.remove("yoghurt");
+        System.out.println(groceries);
+        groceries.removeAll(List.of("apples", "eggs"));
+        System.out.println(groceries);
+
+        // Retain items
+        groceries.retainAll(List.of("apples", "milk", "mustard", "cheese"));
+        System.out.println(groceries);
+
+        // Delete all items
+        groceries.clear();
+        System.out.println("isEmpty = "+ groceries.isEmpty());
+
+        //Populating the array list
+        groceries.addAll(List.of("apples", "milk", "mustard", "cheese"));
+        groceries.addAll(Arrays.asList("eggs", "pickles", "mustard", "ham"));
+
+        //Sort
+        System.out.println(groceries);
+        groceries.sort(Comparator.naturalOrder()); //strings will be ordered alphabetically
+        System.out.println(groceries);
+        groceries.sort(Comparator.reverseOrder()); //strings will be ordered alphabetically in reverse
+
+        // Defining an array that has the same size and type of the list.
+        var groceryArr = groceries.toArray(new String[groceries.size()]);
+        System.out.println(Arrays.toString(groceryArr));
     }
 }
