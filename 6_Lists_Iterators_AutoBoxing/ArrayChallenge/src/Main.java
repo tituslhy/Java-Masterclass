@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+This class is a simple console-based grocery list program. The user chooses a number between 0-2:
+//0 - shutdown program
+//1 - add item(s) to list (comma delimited)
+//2 - remove any items (commma delimited list)
+ */
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> groceryList = new ArrayList<>();
@@ -45,9 +51,4 @@ public class Main {
         System.out.println("Shutting down grocery list program. Bye!");
     }
 }
-
-//0 - shutdown
-//1 - add item(s) to list (comma delimited)
-//2 - remove any items (commma delimited list)
-
 
