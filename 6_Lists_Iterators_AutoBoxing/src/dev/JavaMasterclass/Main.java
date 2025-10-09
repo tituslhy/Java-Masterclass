@@ -103,5 +103,19 @@ public class Main {
         // Defining an array that has the same size and type of the list.
         var groceryArr = groceries.toArray(new String[groceries.size()]);
         System.out.println(Arrays.toString(groceryArr));
+
+        String[] originalArray = new String[] {"First", "Second", "Third"};
+        var originalList = Arrays.asList(originalArray); //var doesn't require us to declare the type - inferred at run time.
+        originalList.set(0, "One");
+        System.out.println("list: " + originalList);
+        System.out.println("array: " + Arrays.toString(originalArray)); //the array has been changed as well!
+
+        originalList.sort(Comparator.naturalOrder());
+        System.out.println("list: " + originalList);
+        System.out.println("array: " + Arrays.toString(originalArray)); //the array has been changed as well!
+
+        // This creates a fixed size list
+        List<String> newList = Arrays.asList("Sunday", "Monday", "Tuesday");
+        System.out.println(newList);
     }
 }

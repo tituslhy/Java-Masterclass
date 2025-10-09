@@ -20,9 +20,11 @@ public class Main {
         gettingElements(placesToVisit);
         printItinerary(placesToVisit);
 
+        testListIterator(placesToVisit);
+        testIterator(placesToVisit);
+
         removeElements(placesToVisit);
         System.out.println(placesToVisit);
-
     }
 
     private static void addMoreElements(LinkedList<String> list){
@@ -83,16 +85,52 @@ public class Main {
         System.out.println("-".repeat(30));
         System.out.println("Trip starts at " + list.getFirst());
 
-        //Using a list iterator
+        //Using a list iterator - a listiterator supports going backwards and forwards
         String previousTown = list.getFirst();
         ListIterator<String> iterator = list.listIterator(1); //pass in the index you want to start at
         while (iterator.hasNext()){
-            var town = iterator.next();
+            var town = iterator.next(); //using .next() moves the cursor position to the next element in the list.
             System.out.println("--> From: " + previousTown + " to " + town);
             previousTown = town;
         }
 
         System.out.println("Trip ends at " + list.getLast());
         System.out.println("-".repeat(30));
+    }
+
+    private static void testIterator(LinkedList<String> list){
+
+        // NOte that iterators only move forward through the list and only supports the remove method.
+        var iterator = list.iterator(); //list.listIterator() to use a listIterator;
+
+        while (iterator.hasNext()){
+//            System.out.println(iterator.next());
+            if (iterator.next().equals("Brisbane")){
+                iterator.remove(); //the iterator provides a safe way to remove elements from a list.
+            }
+        }
+
+        // Once the iterator is done iterating through the linked list you have to reset the pointer back
+        // to the beginning.
+        System.out.println(list);
+    }
+
+    private static void testListIterator(LinkedList<String> list){
+        var iterator = list.listIterator();
+        while (iterator.hasNext()){
+            if (iterator.next().equals("Brisbane")){
+                iterator.add("Lake Wivenhoe");
+            }
+        }
+        //iterate backwards!
+        while (iterator.hasPrevious()){
+            System.out.println(iterator.previous());
+        }
+
+        var iterator2 = list.listIterator(3); //specify cursor position
+        System.out.println(iterator.next());
+        System.out.println(iterator.previous());
+
+        System.out.println(list);
     }
 }
