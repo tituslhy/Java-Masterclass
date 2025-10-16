@@ -1,4 +1,4 @@
-package JavaMasterclass;
+package GenericsLesson1;
 
 import java.util.ArrayList;
 import java.util.List;

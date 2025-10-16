@@ -1,4 +1,4 @@
-package JavaMasterclass;
+package GenericsLesson1;
 
 interface Player {
     String name(); //This does not force a change to a record
