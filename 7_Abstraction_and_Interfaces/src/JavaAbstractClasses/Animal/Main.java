@@ -1,4 +1,4 @@
-package JavaMasterClass.Animal;
+package JavaAbstractClasses.Animal;
 
 import java.util.ArrayList;
 

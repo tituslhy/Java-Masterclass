@@ -1,4 +1,4 @@
-package JavaMasterClass.Animal;
+package JavaAbstractClasses.Animal;
 
 public class Fish extends Animal{
 

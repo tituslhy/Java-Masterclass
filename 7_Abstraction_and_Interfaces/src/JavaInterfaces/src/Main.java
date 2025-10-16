@@ -1,4 +1,4 @@
-package JavaMasterClass;
+package JavaInterfaces.src;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

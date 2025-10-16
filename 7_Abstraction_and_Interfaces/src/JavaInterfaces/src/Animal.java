@@ -1,4 +1,4 @@
-package JavaMasterClass;
+package JavaInterfaces.src;
 
 interface FlightEnabled {
 

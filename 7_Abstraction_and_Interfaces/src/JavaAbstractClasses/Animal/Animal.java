@@ -1,4 +1,4 @@
-package JavaMasterClass.Animal;
+package JavaAbstractClasses.Animal;
 
 /*
 Notice that you cannot have private abstract methods because they must be extended.
