@@ -31,8 +31,10 @@ public class Main {
 
         //This use of generic class `Team` means that you can only add Baseball Players
         //Don't use the generics in raw form. Specify the class when you instantiate them
-        Team<BaseballPlayer> phillies = new Team<>("Philadelphia Phillies");
-        Team<BaseballPlayer> astros = new Team<>("Houston Astros");
+        var philly = new Affiliation("city", "Philadelphia, PA", "US");
+
+        Team<BaseballPlayer, Affiliation> phillies = new Team<>("Philadelphia Phillies", philly);
+        Team<BaseballPlayer, Affiliation> astros = new Team<>("Houston Astros");
         scoreResults(phillies, 3, astros, 5);
 
         var harper = new BaseballPlayer("B Harper", "Right Fielder");
@@ -41,7 +43,7 @@ public class Main {
         phillies.addTeamMember(marsh);
         phillies.listTeamMembers();
 
-        Team<FootballPlayer> afc = new Team<>("Adelaide Crows");
+        Team<FootballPlayer, Affiliation> afc = new Team<>("Adelaide Crows");
         var tex = new FootballPlayer("Tex Walker", "Center half forward");
         var guthrie = new BaseballPlayer("D Guthrie", "Center Fielder");
         afc.addTeamMember(tex);
@@ -50,14 +52,14 @@ public class Main {
 
         // But you can even create a Team of type string! the generic classes work regardless!
         // This works: Team<String> adelaide = new Team<>("Adelaide Storm"); if Team<T> is the definition
-        // Which is why you have to define Team<T extends Player> in your generic class
+        // Which is why you have to define Team<T extends Player, Affiliation> in your generic class
         // Either that - or just add a "name" method to the Interface
-        var adelaide = new Team<VolleyballPlayer>("Adelaide Storm");
+        var adelaide = new Team<VolleyballPlayer, Affiliation>("Adelaide Storm");
         var roberts = new VolleyballPlayer("N Roberts", "Setter");
         adelaide.addTeamMember(roberts);
         adelaide.listTeamMembers();
 
-        var canberra = new Team<VolleyballPlayer>("Canberra Heat");
+        var canberra = new Team<VolleyballPlayer, Affiliation>("Canberra Heat");
         canberra.addTeamMember(new VolleyballPlayer("B Black", "Opposite"));
         canberra.listTeamMembers();
         scoreResults(canberra, 0, adelaide, 1);
