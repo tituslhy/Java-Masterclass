@@ -3,6 +3,8 @@ package JavaMasterClass;
 public class Test {
     public static void main(String[] args) {
         inFlight(new Jet());
+        orbit(new Satellite());
+//        OrbitEarth.log("Testing" + new Satellite());
     }
 
     private static void inFlight(FlightEnabled flier){
@@ -13,5 +15,11 @@ public class Test {
             tracked.track();
         }
         flier.land();
+    }
+
+    private static void orbit(OrbitEarth orbiter){
+        orbiter.takeOff();
+        orbiter.fly();
+        orbiter.land();
     }
 }

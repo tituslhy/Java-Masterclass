@@ -1,8 +1,5 @@
 package JavaMasterClass;
 
-/*
-This class does not inherit from Animal!
- */
 public class Jet implements FlightEnabled, Trackable {
     @Override
     public void takeOff() {
@@ -27,6 +24,8 @@ public class Jet implements FlightEnabled, Trackable {
     @Override
     public FlightStages transition(FlightStages stage) {
         System.out.println(getClass().getSimpleName() + " transitioning");
-        return FlightStages.CRUISE;
+
+        // When you call a default method from an overriden method, you need to return a super type!
+        return FlightEnabled.super.transition(stage);
     }
 }

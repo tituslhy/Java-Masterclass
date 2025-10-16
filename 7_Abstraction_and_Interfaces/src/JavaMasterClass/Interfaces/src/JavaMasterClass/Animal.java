@@ -16,16 +16,39 @@ interface FlightEnabled {
     default FlightStages transition(FlightStages stage){
         // It's common practice to write a statement or throw an exception to inform the user that
         // this new method needs override - but does not force them to . Their code still compiles.
-        System.out.println(
-                "Transition not implemented on " + this.getClass().getName()
-        );
-        return null;
+
+//        System.out.println(
+//                "Transition not implemented on " + this.getClass().getName()
+//        );
+//        return null;
+
+        FlightStages nextStage = stage.getNextStage();
+        System.out.println("Transitioning from " + stage + " to " + nextStage);
+        return nextStage;
     }
 }
 
 interface OrbitEarth extends FlightEnabled{
 
     void achieveOrbit();
+
+    //Only concrete methods in the interface can call it.
+    private static void log(String description){
+        var today = new java.util.Date();
+        System.out.println(today + ": " + description);
+    }
+
+    private void logStage(FlightStages stage, String description){
+        description = stage + ": " + description;
+        log(description);
+    }
+
+    @Override
+    default FlightStages transition(FlightStages stage) {
+        FlightStages nextStage = FlightEnabled.super.transition(stage);
+        logStage(stage, "Beginning transition to " + nextStage);
+        return nextStage;
+    }
 }
 
 /*
@@ -44,6 +67,9 @@ enum FlightStages implements Trackable {
 
     public FlightStages getNextStage(){
         FlightStages[] allStages = values();
+
+        //Return the next stage except if it's the last stage (DATA_COLLECTION),
+        //so we return the first stage instead.
         return allStages[(ordinal() + 1) % allStages.length];
     }
 }
@@ -68,25 +94,36 @@ record DragonFly(String name, String type) implements FlightEnabled{
 }
 
 class Satellite implements OrbitEarth{
+    FlightStages stage = FlightStages.GROUNDED;
+
     @Override
     public void achieveOrbit() {
-        System.out.println("Orbit achieved");
+        transition("Orbit achieved");
     }
 
     @Override
     public void takeOff() {
-        System.out.println(getClass().getSimpleName()  + " is taking off");
+        transition("Taking off");
     }
 
     @Override
     public void land() {
-        System.out.println(getClass().getSimpleName()  + " is landing");
+        transition("Landing");
     }
 
     @Override
     public void fly() {
-        System.out.println(getClass().getSimpleName()  + " is flying");
+        achieveOrbit();
+        transition("Data collection while orbiting");
     }
+
+    //Overloading the interface's transition method
+    public void transition(String description){
+        System.out.println(description);
+        stage = transition(stage);
+        stage.track();
+    }
+
 }
 
 interface Trackable {
