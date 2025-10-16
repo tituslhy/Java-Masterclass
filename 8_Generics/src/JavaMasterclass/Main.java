@@ -88,8 +88,8 @@ public class Main {
     because we are using the generic class `Team` in raw form.
      */
     public static void scoreResults(
-            Team team1, int t1_score,
-            Team team2, int t2_score
+            Team<?, ?> team1, int t1_score,
+            Team<?, ?> team2, int t2_score
     ){
         String message = team1.setScore(t1_score, t2_score);
         team2.setScore(t2_score, t1_score);
