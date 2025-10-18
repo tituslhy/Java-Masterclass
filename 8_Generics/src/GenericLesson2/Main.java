@@ -1,7 +1,19 @@
 package GenericLesson2;
 
+import GenericLesson2.util.QueryItem;
+import GenericLesson2.util.QueryList;
+
+import javax.management.Query;
 import java.util.ArrayList;
 import java.util.List;
+
+record Employee(String name) implements QueryItem {
+
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+        return false;
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +30,15 @@ public class Main {
 
         testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
         testList(new ArrayList<Integer>(List.of(1,2,3)));
+
+        var queryList = new QueryList<>(students);
+        var matches = queryList.getMatches("Course", "Python");
+        printMoreLists(matches);
+
+        var students2021 = QueryList.getMatches(students,"YearStarted", "2021");
+        printMoreLists(students2021);
+
+//        QueryList<Employee> employeeList = new QueryList<>();
     }
 
     /*

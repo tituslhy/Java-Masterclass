@@ -1,8 +1,10 @@
 package GenericLesson2;
 
+import GenericLesson2.util.QueryItem;
+
 import java.util.Random;
 
-public class Student {
+public class Student implements QueryItem {
     private String name;
     private String course;
     private int yearStarted;
@@ -31,4 +33,14 @@ public class Student {
         return "%-15s %-15s %d".formatted(name, course, yearStarted);
     }
 
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+        String fname = fieldName.toUpperCase();
+        return switch(fname){
+            case "NAME" -> name.equalsIgnoreCase(value);
+            case "COURSE" -> course.equalsIgnoreCase(value);
+            case "YEARSTARTED" -> yearStarted == (Integer.parseInt(value));
+            default -> false;
+        };
+    }
 }
