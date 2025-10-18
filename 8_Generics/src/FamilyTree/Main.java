@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         var dad = new Dad("Titus", 35);
-        var mum = new Dad("Dawn", 31);
+        var mum = new Mum("Dawn", 31);
         var girl1 = new Daughter("Princess", 4);
         var girl2 = new Daughter("Princess2", 2);
         var bob = new Pet("Bob");
