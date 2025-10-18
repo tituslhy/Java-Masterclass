@@ -15,6 +15,9 @@ public class Main {
 
 //        printList(students);
         printMoreLists(students);
+
+        testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
+        testList(new ArrayList<Integer>(List.of(1,2,3)));
     }
 
     /*
@@ -44,4 +47,27 @@ public class Main {
         }
         System.out.println();
     }
+
+    public static void testList(List<?> list){
+        for (var element: list){
+            if (element instanceof String s){
+                System.out.println("String: " + s.toUpperCase());
+            } else if (element instanceof Integer i){
+                System.out.println("Integer: " + i.floatValue());
+            }
+        }
+    }
+
+    //Type erasure - these 2 methods do not overload!
+//    public static void testList(List<String> list){
+//        for (var element: list){
+//            System.out.println("String: " + element.toUpperCase());
+//        }
+//    }
+//
+//    public static void testList(List<Integer> list){
+//        for (var element: list){
+//            System.out.println("Integer: " + element.floatValue());
+//        }
+//    }
 }
