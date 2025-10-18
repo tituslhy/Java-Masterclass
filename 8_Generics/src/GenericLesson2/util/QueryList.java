@@ -7,7 +7,7 @@ import java.util.List;
 
 /*
 The class must be the first on the extended list
-Any class that uses QueryList must also extend Student!
+QueryList only takes in a type that is of Student and implements QueryItem
  */
 public class QueryList <T extends Student & QueryItem>{
     private List<T> items;

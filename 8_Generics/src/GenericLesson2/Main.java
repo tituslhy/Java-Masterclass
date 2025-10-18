@@ -3,7 +3,6 @@ package GenericLesson2;
 import GenericLesson2.util.QueryItem;
 import GenericLesson2.util.QueryList;
 
-import javax.management.Query;
 import java.util.ArrayList;
 import java.util.List;
 
