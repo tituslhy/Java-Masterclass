@@ -26,3 +26,5 @@ Example:
 - Create a few tickets of different types (concert, movie, sports).
 - Add them to a List<Ticket<?>>.
 - Loop through and print all ticket info.
+
+ChatGPT has marked the solution provided as correct!
