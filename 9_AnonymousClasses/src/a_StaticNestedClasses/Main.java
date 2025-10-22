@@ -1,4 +1,4 @@
-package StaticNestedClasses;
+package a_StaticNestedClasses;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package NonStaticNestedClasses;
+package d_AnonymousClasses;
 
 import java.util.Comparator;
 

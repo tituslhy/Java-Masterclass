@@ -1,4 +1,4 @@
-package NonStaticNestedClasses.burger;
+package b_NonStaticNestedClasses.burger;
 
 public class Store {
     public static void main(String[] args) {

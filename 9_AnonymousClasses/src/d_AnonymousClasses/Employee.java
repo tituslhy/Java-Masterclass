@@ -1,4 +1,4 @@
-package StaticNestedClasses;
+package d_AnonymousClasses;
 
 import java.util.Comparator;
 

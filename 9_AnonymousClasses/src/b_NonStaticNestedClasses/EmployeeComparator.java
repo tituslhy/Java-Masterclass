@@ -1,4 +1,4 @@
-package StaticNestedClasses;
+package b_NonStaticNestedClasses;
 
 import java.util.Comparator;
 

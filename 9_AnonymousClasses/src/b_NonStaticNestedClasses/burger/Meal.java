@@ -1,6 +1,4 @@
-package NonStaticNestedClasses.burger;
-
-import NonStaticNestedClasses.StoreEmployee;
+package b_NonStaticNestedClasses.burger;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package NonStaticNestedClasses;
+package b_NonStaticNestedClasses;
 
 import java.util.ArrayList;
 import java.util.List;
