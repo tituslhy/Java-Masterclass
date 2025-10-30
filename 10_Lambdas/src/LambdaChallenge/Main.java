@@ -24,16 +24,20 @@ public class Main {
 
         System.out.println("-".repeat(50));
         List<String> nameList = new ArrayList<>(List.of(names));
-        nameList.removeIf(
-                s -> s.substring(0, s.indexOf(" ")).equals(
-                        s.substring(s.lastIndexOf(" ") + 1)
-                )
-        );
+//        nameList.removeIf(
+//                s -> s.substring(0, s.indexOf(" ")).equals(
+//                        s.substring(s.lastIndexOf(" ") + 1)
+//                )
+//        );
+
+        // my solution
+        nameList.removeIf(s -> equalsLastName(s));
         System.out.println(nameList);
     }
 
-    public static boolean equalsLastName(String s){
-        return s.split(" ")[0].equalsIgnoreCase(s.split(" ")[2]);
+    public static boolean equalsLastName(String s) {
+        String[] parts = s.trim().split("\\s+");
+        return parts[0].equalsIgnoreCase(parts[2]);
     }
 
     public static char getRandomChar(){
