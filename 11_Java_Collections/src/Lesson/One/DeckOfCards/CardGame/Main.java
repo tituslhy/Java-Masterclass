@@ -1,4 +1,4 @@
-package Lesson.DeckOfCards.CardGame;
+package Lesson.One.DeckOfCards.CardGame;
 
 public class Main {
     public static void main(String[] args) {
