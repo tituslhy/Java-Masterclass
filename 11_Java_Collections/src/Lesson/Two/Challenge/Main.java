@@ -7,6 +7,8 @@ public class Main {
         Set<Task> tasks = TaskData.getTasks("all");
         sortAndPrint("All tasks", tasks);
 
+        //This comparator works because high, medium and low are indexes 0, 1, and 2
+        //in the Priority enum
         Comparator<Task> sortByPriority = Comparator.comparing(Task::getPriority);
         Set<Task> annsTasks = TaskData.getTasks("Ann");
         sortAndPrint("Ann's tasks", annsTasks, sortByPriority);
