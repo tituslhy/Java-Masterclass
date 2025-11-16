@@ -49,5 +49,13 @@ public class TreeSetMain {
         System.out.printf("max = %s, last = %s %n", max.getName(), last.getName());
         System.out.println("-".repeat(50));
 
+        // This method works too - but notice that the element that is being polled
+        // no longer belong to the set after polling. They get removed from `copiedSet`
+        NavigableSet<Contact> copiedSet = new TreeSet<>(fullSet);
+        System.out.println("First element = " + copiedSet.pollFirst());
+        System.out.println("Last element = " + copiedSet.pollLast());
+        copiedSet.forEach(System.out::println);
+        System.out.println("-".repeat(50));
+
     }
 }
