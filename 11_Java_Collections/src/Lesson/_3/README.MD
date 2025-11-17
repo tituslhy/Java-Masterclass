@@ -1,0 +1,1 @@
+Note: HashMaps cannot have duplicate keys!

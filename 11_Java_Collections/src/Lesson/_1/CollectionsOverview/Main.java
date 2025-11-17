@@ -1,8 +1,7 @@
-package Lesson.One.CollectionsOverview;
+package Lesson._1.CollectionsOverview;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.HashSet;
 
 public class Main {

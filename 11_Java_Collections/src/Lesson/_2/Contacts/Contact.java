@@ -1,4 +1,4 @@
-package Lesson.Two.Contacts;
+package Lesson._2.Contacts;
 
 import java.util.HashSet;
 import java.util.Set;

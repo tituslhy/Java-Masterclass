@@ -1,4 +1,4 @@
-package Lesson.Two.Challenge;
+package Lesson._2.Challenge;
 
 import java.util.*;
 

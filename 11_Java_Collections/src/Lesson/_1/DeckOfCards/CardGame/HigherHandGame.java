@@ -1,6 +1,6 @@
-package Lesson.One.DeckOfCards.CardGame;
+package Lesson._1.DeckOfCards.CardGame;
 
-import Lesson.One.DeckOfCards.Card;
+import Lesson._1.DeckOfCards.Card;
 
 import java.util.*;
 

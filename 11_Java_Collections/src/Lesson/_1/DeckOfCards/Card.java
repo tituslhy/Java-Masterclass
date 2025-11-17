@@ -1,4 +1,4 @@
-package Lesson.One.DeckOfCards;
+package Lesson._1.DeckOfCards;
 
 import java.util.ArrayList;
 import java.util.List;

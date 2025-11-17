@@ -1,4 +1,4 @@
-package Lesson.Two.Challenge;
+package Lesson._2.Challenge;
 
 enum Priority {HIGH, MEDIUM, LOW};
 enum Status {IN_QUEUE, ASSIGNED, IN_PROGRESS};

@@ -1,4 +1,4 @@
-package Lesson.Two.Sets_HashSets;
+package Lesson._2.Sets_HashSets;
 
 public class PlayingCard {
     private String suit;
