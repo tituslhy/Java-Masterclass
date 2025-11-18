@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
 
 public class Main {
     public static void main(String[] args) {
         List<Contact> phones = ContactData.getData("phone");
         List<Contact> emails = ContactData.getData("email");
-
 
         // Merging lists - this will include duplicates
         List<Contact> fullList = new ArrayList<>(phones);
@@ -90,11 +90,28 @@ public class Main {
         contacts.clear();
         fullList.forEach(
                 contact -> contacts.merge(
-                        contact.getName(),
-                        contact,
-                        Contact::mergeContactData //same as: (previous, current) -> previous.mergeContactData(current)
+                        contact.getName(),          //key
+                        contact,                    //value
+                        Contact::mergeContactData   //same as: (previous, current) -> previous.mergeContactData(current)
                 )
         );
         contacts.forEach((k, v) -> System.out.println("key=" + k + ", value = "  + v));
+
+        // Alternatively some people define anonymous functions for verbosity.
+        // This is like defining a callback function inline.
+        System.out.println("-".repeat(50));
+        contacts.clear();
+        fullList.forEach(
+                contact -> contacts.merge(
+                        contact.getName(),
+                        contact,
+                        new BiFunction<Contact, Contact, Contact>() {
+                            @Override
+                            public Contact apply(Contact previous, Contact current) {
+                                return previous.mergeContactData(current);
+                            }
+                        }
+                )
+        );
     }
 }
